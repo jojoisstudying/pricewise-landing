@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PriceWise – Landing Page Sistem Penentu Harga Jual</title>
+    <meta
+      name="description"
+      content="PriceWise adalah konsep sistem website yang membantu menghitung harga jual secara terstruktur berdasarkan biaya dan margin keuntungan."
+    />
+    <!-- Google Fonts - Source Serif Pro -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Chart.js untuk visualisasi data -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+    <!-- XLSX untuk membaca file Excel -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js" defer></script>
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <!-- Header / Navigation -->
+    <header class="pw-header">
+      <div class="pw-header-inner">
+        <a href="#home" class="pw-logo">PriceWise</a>
+        <nav class="pw-nav">
+          <a href="#home" class="pw-nav-link">Home</a>
+          <a href="#problem" class="pw-nav-link">Permasalahan</a>
+          <a href="#solution" class="pw-nav-link">Solusi</a>
+          <a href="#data" class="pw-nav-link">Data</a>
+          <a href="#developer" class="pw-nav-link">Pengembang</a>
+        </nav>
+        <button class="pw-nav-toggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero / Intro -->
+      <section id="home" class="pw-section pw-hero">
+        <div class="pw-container pw-hero-grid">
+          <div class="pw-hero-left">
+            <p class="pw-badge">Konsep Sistem Penentu Harga Jual</p>
+            <h1 class="pw-hero-title">
+              Simple Cost Calculation<br />
+              <span class="pw-hero-title-strong">for Better Pricing</span>
+            </h1>
+            <p class="pw-hero-subtitle">
+              PriceWise adalah konsep sistem website yang membantu pengguna menghitung harga jual secara
+              terstruktur berdasarkan biaya dan margin keuntungan.
+            </p>
+            <div class="pw-hero-actions">
+              <a href="#solution" class="pw-btn pw-btn-primary">Lihat Alur Sistem</a>
+              <a href="#data" class="pw-btn pw-btn-ghost">Lihat Data &amp; Grafik</a>
+            </div>
+            <p class="pw-hero-meta">
+              Landing page ini berperan sebagai media presentasi ide, bukan aplikasi produksi penuh.
+            </p>
+          </div>
+          <div class="pw-hero-right">
+            <div class="pw-hero-card">
+              <h2 class="pw-hero-card-title">Gambaran Singkat Sistem</h2>
+              <ul class="pw-hero-list">
+                <li>Mencatat seluruh komponen biaya</li>
+                <li>Menghitung total biaya dan margin keuntungan</li>
+                <li>Memberikan rekomendasi harga jual</li>
+                <li>Menyimpan hasil perhitungan untuk evaluasi</li>
+              </ul>
+              <div class="pw-hero-pill">
+                Fokus pada kejelasan alur sistem &amp; visualisasi data.
+              </div>
+            </div>
+            <div class="pw-hero-blob"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Permasalahan -->
+      <section id="problem" class="pw-section pw-section-alt">
+        <div class="pw-container">
+          <div class="pw-section-header">
+            <h2>Permasalahan dalam Menentukan Harga Jual</h2>
+            <p>
+              Banyak usaha kecil, individu, dan freelancer masih menentukan harga jual secara intuitif,
+              mengikuti harga orang lain, atau menggunakan rumus sederhana yang tidak memperhitungkan seluruh
+              komponen biaya.
+            </p>
+          </div>
+
+          <div class="pw-problem-grid">
+            <article class="pw-card pw-card-flat">
+              <h3>Perhitungan Tidak Terstruktur</h3>
+              <p>
+                Penentuan harga sering dilakukan tanpa mencatat seluruh komponen biaya, sehingga sulit
+                mengetahui apakah harga sudah menutup biaya dan memberikan keuntungan yang layak.
+              </p>
+            </article>
+            <article class="pw-card pw-card-flat">
+              <h3>Komponen Biaya yang Kompleks</h3>
+              <p>
+                Biaya produksi bisa mencakup bahan, tenaga kerja, layanan digital, hingga biaya operasional
+                lain yang sulit dilacak bila hanya dihitung manual.
+              </p>
+            </article>
+            <article class="pw-card pw-card-flat">
+              <h3>Rawan Kesalahan &amp; Kerugian</h3>
+              <p>
+                Tanpa alat bantu, perhitungan manual rawan salah hitung dan tidak terdokumentasi, yang pada
+                akhirnya berpotensi menimbulkan kerugian tanpa disadari.
+              </p>
+            </article>
+            <article class="pw-card pw-card-flat">
+              <h3>Harga Tidak Kompetitif</h3>
+              <p>
+                Harga jual yang tidak didasarkan pada data mengakibatkan harga terlalu murah atau terlalu
+                mahal dibandingkan pesaing, sehingga mengganggu daya saing.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Solusi & Alur Sistem -->
+      <section id="solution" class="pw-section">
+        <div class="pw-container">
+          <div class="pw-section-header">
+            <h2>Solusi yang Ditawarkan PriceWise</h2>
+            <p>
+              PriceWise menawarkan konsep sistem website yang membantu pengguna menghitung harga jual secara
+              sederhana namun terstruktur, berbasis data biaya dan margin keuntungan yang diinginkan.
+            </p>
+          </div>
+
+          <div class="pw-flow-grid">
+            <div class="pw-flow-card">
+              <span class="pw-flow-step">01</span>
+              <h3>Input Komponen Biaya</h3>
+              <p>
+                Pengguna memasukkan seluruh komponen biaya, mulai dari bahan baku, tenaga kerja, layanan
+                digital, hingga biaya operasional pendukung.
+              </p>
+            </div>
+            <div class="pw-flow-card">
+              <span class="pw-flow-step">02</span>
+              <h3>Tentukan Margin Keuntungan</h3>
+              <p>
+                Pengguna menentukan persentase keuntungan yang diinginkan, sehingga sistem dapat menghitung
+                nilai keuntungan secara otomatis.
+              </p>
+            </div>
+            <div class="pw-flow-card">
+              <span class="pw-flow-step">03</span>
+              <h3>Hitung Harga Jual</h3>
+              <p>
+                Sistem menghitung total biaya, nilai keuntungan, dan menghasilkan rekomendasi harga jual yang
+                rasional dan konsisten.
+              </p>
+            </div>
+            <div class="pw-flow-card">
+              <span class="pw-flow-step">04</span>
+              <h3>Simpan &amp; Evaluasi</h3>
+              <p>
+                Hasil perhitungan dapat disimpan untuk evaluasi, perbandingan, atau penyesuaian harga di
+                kemudian hari.
+              </p>
+            </div>
+          </div>
+
+          <div class="pw-benefit-grid">
+            <article class="pw-card pw-card-elevated">
+              <h3>Manfaat Utama</h3>
+              <ul class="pw-list">
+                <li>Penentuan harga jual lebih akurat dan rasional.</li>
+                <li>Mengurangi risiko kerugian akibat biaya yang tidak tercatat.</li>
+                <li>Alur penetapan harga menjadi lebih terstruktur dan terdokumentasi.</li>
+                <li>Menghemat waktu dibandingkan perhitungan manual berulang.</li>
+                <li>Mendukung pengambilan keputusan yang lebih konsisten.</li>
+              </ul>
+            </article>
+
+            <article class="pw-card pw-card-elevated">
+              <h3>Target Pengguna</h3>
+              <div class="pw-target-grid">
+                <div class="pw-target-card">
+                  <h4>Usaha Kecil &amp; UMKM</h4>
+                  <p>Pelaku usaha yang ingin memastikan harga produk menutup biaya dan tetap kompetitif.</p>
+                </div>
+                <div class="pw-target-card">
+                  <h4>Freelancer</h4>
+                  <p>Profesional lepas yang perlu memperhitungkan waktu, tools, dan biaya operasional.</p>
+                </div>
+                <div class="pw-target-card">
+                  <h4>Individu Penjual Jasa</h4>
+                  <p>Individu yang menawarkan layanan dan perlu perhitungan tarif yang lebih objektif.</p>
+                </div>
+                <div class="pw-target-card">
+                  <h4>Proyek Pembelajaran</h4>
+                  <p>
+                    Konteks akademik yang membutuhkan contoh sistem penentu harga berbasis data dan
+                    perhitungan.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Data & Grafik -->
+      <section id="data" class="pw-section pw-section-alt">
+        <div class="pw-container">
+          <div class="pw-section-header">
+            <h2>Data &amp; Visualisasi</h2>
+            <p>
+              DATA 3 - Laporan Perpustakaan Skomda diolah dalam bentuk spreadsheet, kemudian divisualisasikan untuk
+              memperlihatkan jumlah dari setiap kategori buku.
+            </p>
+          </div>
+
+          <div class="pw-data-layout">
+            <div class="pw-card pw-card-elevated pw-data-chart-card">
+              <div class="pw-data-chart-header">
+                <h3 id="chartTitle">Grafik Ringkasan Data</h3>
+                <p id="chartDescription" class="pw-data-subtitle">
+                  Grafik ini dibangun secara otomatis dari file
+                  <code>data/dataset_processed.xlsx</code>.
+                </p>
+              </div>
+              <div class="pw-chart-wrapper">
+                <button class="pw-chart-nav-btn pw-chart-nav-prev" aria-label="Grafik sebelumnya">
+                  <span>←</span>
+                </button>
+                <div class="pw-chart-container">
+                  <canvas id="costChart" aria-label="Grafik data biaya dan harga jual"></canvas>
+                  <img
+                    id="chartFallbackImage1"
+                    src="images/Screenshot 2026-01-23 181238.png"
+                    alt="Grafik alternatif - Jumlah Buku per Kategori"
+                    class="pw-chart-fallback-image"
+                    style="display: none;"
+                  />
+                  <img
+                    id="chartFallbackImage2"
+                    src="images/download (1).png"
+                    alt="Grafik alternatif - Rasio Peminjaman"
+                    class="pw-chart-fallback-image"
+                    style="display: none;"
+                  />
+                  <p id="dataFallback" class="pw-data-fallback">
+                    Jika grafik tidak muncul, pastikan file <strong>dataset_processed.xlsx</strong> berada di
+                    folder <code>data/</code> dan dimuat melalui server (bukan langsung dari file system).
+                  </p>
+                </div>
+                <button class="pw-chart-nav-btn pw-chart-nav-next" aria-label="Grafik berikutnya">
+                  <span>→</span>
+                </button>
+              </div>
+              <div class="pw-chart-indicator">
+                <span id="chartIndicator">1 / 2</span>
+              </div>
+            </div>
+
+            <div class="pw-card pw-card-flat pw-data-info-card">
+              <h3>Struktur Data</h3>
+              <p>
+                Pada bagian ini, data ditampilkan sebagai contoh pengolahan dan visualisasi spreadsheet yang
+                digunakan untuk mendukung tampilan grafik pada landing page.
+              </p>
+              <p>
+                Data pada bagian ini digunakan sebagai contoh pengolahan dan visualisasi spreadsheet untuk memenuhi kebutuhan tugas.
+                File dataset.xlsx berisi data mentah, sedangkan dataset_processed.xlsx merupakan hasil pengolahan yang ditampilkan dalam 
+                bentuk grafik di website. Data ini bukan data asli sistem PriceWise, melainkan dataset contoh untuk menunjukkan proses pengolahan data dan visualisasi. 
+                File <code>dataset.xlsx</code> berisi data mentah, sedangkan
+                <code>dataset_processed.xlsx</code> merupakan hasil pengolahan dan peringkasan data yang siap
+                ditampilkan dalam bentuk grafik.
+        
+              <p class="pw-data-link">
+                Lihat atau unduh file spreadsheet:
+                <a href="data/dataset.xlsx" target="_blank" rel="noopener noreferrer">dataset.xlsx</a>
+                &middot;
+                <a href="data/dataset_processed.xlsx" target="_blank" rel="noopener noreferrer"
+                  >dataset_processed.xlsx</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Profil Pengembang -->
+      <section id="developer" class="pw-section">
+        <div class="pw-container">
+          <div class="pw-section-header">
+            <h2>Profil Pengembang</h2>
+            <p>
+              Proyek ini dikembangkan sebagai media pembelajaran untuk memahami alur sistem penentu harga jual
+              berbasis biaya dan margin keuntungan.
+            </p>
+          </div>
+
+          <div class="pw-developer-layout">
+            <div class="pw-developer-photo">
+              <img
+                src="images/profilepic.jpeg"
+                alt="Foto Profil Rangga Joshua Maindra"
+                class="pw-developer-avatar"
+              />
+            </div>
+            <div class="pw-developer-info pw-card pw-card-flat">
+              <h3>Rangga Joshua Maindra</h3>
+              <p class="pw-developer-role">Project Developer – PriceWise</p>
+              <p>
+                PriceWise dirancang sebagai proyek pembelajaran yang menekankan pemahaman sistem dan alur
+                data, bukan kompleksitas teknis. Landing page ini menjelaskan permasalahan, solusi, alur
+                sistem, serta visualisasi data secara ringkas dan profesional.
+              </p>
+              <p class="pw-developer-meta">
+                Proyek Pembelajaran – SMK Telkom Sidoarjo &middot; 2026
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="pw-footer">
+      <div class="pw-container pw-footer-inner">
+        <p>© 2026 PriceWise &middot; Proyek Pembelajaran – SMK Telkom Sidoarjo</p>
+        <p class="pw-footer-meta">Landing page konseptual untuk presentasi sistem penentu harga jual.</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
